@@ -16,7 +16,8 @@ class GoogleSheetManager:
         self._init_credentials(credentials_path=credentials_path, scopes=scopes)
 
     def _init_credentials(self, credentials_path, scopes):
-        self.credentials = service_account.Credentials.from_service_account_file(credentials_path, scopes=scopes)
+        self.credentials = service_account.Credentials.from_service_account_file(
+            credentials_path, scopes=scopes)
         self.client = gspread.Client(auth=self.credentials)
 
     def start_session(self):
@@ -33,14 +34,15 @@ class GoogleSheetManager:
 
     @staticmethod
     def _build_range(row_number, col_count):
-        range_text = "A{0}:{1}{2}".format(row_number, string.ascii_uppercase[col_count - 1], row_number)
+        range_text = "A{0}:{1}{2}".format(
+            row_number, string.ascii_uppercase[col_count - 1], row_number)
         return range_text
 
     # Create methods
 
     def append_row(self, row_values, worksheet_number=0):
         worksheet = self._get_worksheet(worksheet_number)
-        return worksheet.append_row(row_values)
+        return worksheet.append_row(row_values, value_input_option='USER_ENTERED')
 
     def insert_row(self, row_values, row_index, worksheet_number=0):
         worksheet = self._get_worksheet(worksheet_number)
