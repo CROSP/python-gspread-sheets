@@ -15,7 +15,7 @@ google-auth-oauthlib==0.3.0
 greenlet==0.4.15
 gspread==3.1.0
 gunicorn==19.9.0
-httplib2==0.12.1
+httplib2==0.19.0
 idna==2.8
 mongoengine==0.17.0
 monotonic==1.5
