@@ -2,7 +2,7 @@ auth==0.5.3
 beautifulsoup4==4.7.1
 blinker==1.4
 cachetools==3.1.0
-certifi==2019.3.9
+certifi==2022.12.7
 chardet==3.0.4
 dnspython==1.16.0
 eventlet==0.24.1
